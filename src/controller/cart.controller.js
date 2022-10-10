@@ -1,7 +1,7 @@
 const express = require('express');
 const authenticate = require("../middlewares/authenticate")
 const router = express.Router();
-const Cart = require("../models/cart.model")
+const Cart = require("../models/Cart.model")
 const authorized = require('../middlewares/authorized')
 
 router.post("",async (req, res) => {
