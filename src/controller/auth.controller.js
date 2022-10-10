@@ -1,6 +1,5 @@
 const User = require('../models/user.model');
 const jwt = require("jsonwebtoken")
-
 const newToken = (user) => {
     return jwt.sign({ user }, "ketan");
 }
