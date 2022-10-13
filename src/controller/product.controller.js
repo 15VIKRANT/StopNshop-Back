@@ -34,7 +34,7 @@ router.get("", async (req, res) => {
 
     try {
         const product = await Product.find(req.body);
-        // res.cookie('cookie', 'monster')
+       
         return res.status(200).send(product)
 
     } catch (error) {

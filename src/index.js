@@ -12,7 +12,7 @@ const productController = require("./controller/product.controller")
 const cartcontroller =require('./controller/cart.controller')
 const userController= require('./controller/user.controller')
 const clientController = require('./controller/Client.controller')
-
+const orderController = require('./controller/orderController')
 
 
 
@@ -24,8 +24,10 @@ app.get('/user', getUser);
 app.post("/register", register);
 app.post("/login", login);
 app.use("/cart", cartcontroller);
-app.use('/updateuser', userController)
-app.use('/client',clientController) 
+app.use('/updateuser', userController);
+app.use('/users', userController);
+app.use('/client',clientController); 
+app.use('/orders', orderController);
 
 app.listen(port,async()=>{
     try
@@ -38,7 +40,7 @@ app.listen(port,async()=>{
         }
 
     console.log(`listening on port ${port}`)
-   
+
 })
 
 
