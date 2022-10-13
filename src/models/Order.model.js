@@ -20,6 +20,7 @@ const orderSchema = new mongoose.Schema({
     orderStatus:{type:String, default:"confirmed", required: true}
 })
 
+//confirmed //dispatch //delivered //oufordelievery
 const Order = mongoose.model("order", orderSchema);
 module.exports = Order;
 

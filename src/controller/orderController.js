@@ -27,7 +27,6 @@ router.get("", async (req, res) => {
     }
 })
 
-
 router.get("/:id", async (req, res) => {
 
     try {
@@ -35,6 +34,18 @@ router.get("/:id", async (req, res) => {
         return res.status(200).send(order)
 
     } catch (error) {
+        return res.status(400).send({error: error.message});
+    }
+})
+
+router.patch("/updateorder/:id", async (req, res) => {
+    try 
+    {
+        const order = await Order.findByIdAndUpdate({"_id":req.params.id},req.body,{new:true});
+        return res.status(200).send(order);
+    } 
+    catch (error)
+    {
         return res.status(400).send({error: error.message});
     }
 })
